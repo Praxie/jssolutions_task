@@ -1,0 +1,11 @@
+<template name="add_form">
+    
+    <form name="add_form">
+        {{#if currentUser}}
+        <input type="text" name="search_name" placeholder="Input request">
+        {{else}}
+        <input type="text" name="search_name" placeholder="Input request" disabled>
+        {{/if}}
+    </form>
+    
+ </template>
