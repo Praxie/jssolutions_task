@@ -1,3 +1,11 @@
-#map-canvas {
-    height:500px;
+#map_container {
+    height:500px !important;
+}
+
+form[name='add_form'] input[type="text"] {
+    width:100%;
+}
+
+.row {
+    margin:16px 0;
 }
