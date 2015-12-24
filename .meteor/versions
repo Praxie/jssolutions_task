@@ -37,6 +37,7 @@ es5-shim@4.1.14
 fastclick@1.0.7
 geojson-utils@1.0.4
 google@1.1.7
+harrison:papa-parse@1.1.1
 hot-code-push@1.0.0
 houston:admin@2.0.6
 html-tools@1.0.5
@@ -74,6 +75,7 @@ oauth2@1.1.5
 observe-sequence@1.0.7
 oleh:foursquare@0.0.3
 ordered-dict@1.0.4
+pfafman:filesaver@0.2.2
 promise@0.5.1
 random@1.0.5
 rate-limit@1.0.0
