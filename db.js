@@ -1,0 +1,1 @@
+if(typeof db=='undefined') db=new Mongo.Collection("queries");

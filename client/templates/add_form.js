@@ -1,3 +1,5 @@
+
+
 Template.add_form.events({
     'submit form': function (event) {
         event.preventDefault();
@@ -15,7 +17,7 @@ Template.add_form.events({
         Foursquare.find(query, function (error, result) {
             if (typeof result != 'undefined') {
                 var ret = {
-                    _id:Meteor.userId(),
+                    id:Meteor.userId(),
                     query: query.query,
                     radius:query.radius,
                     lat: center.lat(),
@@ -35,25 +37,10 @@ Template.add_form.events({
                         return ven;
                     }()
                 };
-                var cookie=EJSON.stringify(ret);
-                Cookie.set("a","b");
-                console.log(cookie);
-                Cookie.set("query_list2", cookie);
+                db.insert(ret);
+                
             }
         });
-        /*
-        service = new google.maps.places.PlacesService(map);
-        var request = {
-            query: event.target.getElementsByTagName("input")[0].value
-        };
-        console.log(request);
-        service.textSearch(request, function (results, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                console.log(results);
-            } else {
-                console.log("error");
-            }
-        });
-*/
     }
 });
+

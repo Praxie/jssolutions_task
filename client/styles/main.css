@@ -9,3 +9,8 @@ form[name='add_form'] input[type="text"] {
 .row {
     margin:16px 0;
 }
+
+.select_query{
+    display:none;
+}
+
