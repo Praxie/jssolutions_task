@@ -1,8 +1,17 @@
 <template name="history">
-    <form>
+    <form id="query_form">
         {{#each queries}} {{> query_input}} {{/each}}
     </form>
     <table class="table table-bordered" id="query_table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Lat</td>
+                <td>Lng</td>
+                <td>Radius</td>
+                <td>Time</td>
+            </tr>
+        </thead>
         <tbody>
             {{#each queries}} {{> query_table}} {{/each}}
         </tbody>
@@ -13,10 +22,10 @@
     <input name="select_query" type="radio" value="{{query}}" id="{{query}}" class="select_query">
 </template>
 
-<template name="query_table" >
+<template name="query_table">
     <tr id="{{query}}">
 
-        <td > 
+        <td>
             <label for="{{query}}">
                 {{query}}
             </label>

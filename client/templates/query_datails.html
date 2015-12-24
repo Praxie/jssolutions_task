@@ -1,0 +1,26 @@
+<template name="query_details">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>City</td>
+                <td>Street address</td>
+                <td>Latitude</td>
+                <td>Longitude</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each venues}} {{>query_detail}} {{/each}}
+        </tbody>
+    </table>
+</template>
+
+<template name="query_detail">
+    <tr>
+        <td>{{name}}</td>
+        <td>{{city}}</td>
+        <td>{{address}}</td>
+        <td>{{lat}}</td>
+        <td>{{lng}}</td>
+    </tr>
+</template>

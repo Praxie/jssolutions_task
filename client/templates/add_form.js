@@ -17,7 +17,7 @@ Template.add_form.events({
         Foursquare.find(query, function (error, result) {
             if (typeof result != 'undefined') {
                 var ret = {
-                    id:Meteor.userId(),
+                    user_id:Meteor.userId(),
                     query: query.query,
                     radius:query.radius,
                     lat: center.lat(),
