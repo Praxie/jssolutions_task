@@ -22,7 +22,7 @@ Template.add_form.events({
                     radius:query.radius,
                     lat: center.lat(),
                     lng: center.lng(),
-                    date:Date.now(),
+                    date:new Date(),
                     venues: function () {
                         var ven=[];
                         result.response.venues.forEach(function(item,i,arr) {
@@ -37,10 +37,11 @@ Template.add_form.events({
                         return ven;
                     }()
                 };
-                db.insert(ret);
-                
+                Meteor.call("insertQuery",ret);
+                console.log(event.target.search_name.value="");
             }
         });
+        
     }
 });
 

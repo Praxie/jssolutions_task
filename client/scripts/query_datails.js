@@ -1,11 +1,14 @@
 Template.query_details.helpers({
     venues: function () {
-        var id = Session.get("query_venues");
-        return id;
+        var id = Session.get("venues_id");
+        var venues=queryResultsDB.findOne({_id:id}).venues;
+        return venues;
     },
 
     venuesNum: function () {
-        return Session.get("query_venues").length;
+        var id = Session.get("venues_id");
+        var venues=queryResultsDB.findOne({_id:id});
+        return venues.venues.length;
     }
 
 });
@@ -19,6 +22,5 @@ Template.query_details.events({
         csv="sep=;\n"+csv;
         var blob=new Blob([csv], {type: "text/csv;charset=utf-8"});
         saveAs(blob, "export.csv");
-        console.log(csv);
     }
 });

@@ -6,13 +6,13 @@
             </div>
         </div>
 
-        {{#if currentUser}}
+        {{#if currentUser}} {{#if showHistory}}
         <div class="row">
             <div class=" col-md-10 col-md-offset-1">
                 {{> history}}
             </div>
         </div>
-        {{/if}}
+        {{/if}} {{/if}}
         <div class="row">
             <div class=" col-md-10 col-md-offset-1">
                 {{> add_form}}
@@ -27,14 +27,14 @@
                 </div>
             </div>
         </div>
-        
-        {{#if currentUser}} {{#if isQueryDetails}}
+
+        {{#if currentUser}} {{#if showQueryDetails}}
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 {{> query_details}}
             </div>
         </div>
         {{/if}} {{/if}}
-        
+
     </div>
 </template>

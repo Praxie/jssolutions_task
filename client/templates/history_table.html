@@ -1,0 +1,23 @@
+<template name="history_table">
+    <tr id="{{_id}}">
+        <td>
+            <span class="glyphicon glyphicon-remove" id="remove_query"></span>
+        </td>
+        <td>
+                {{query}}
+        </td>
+
+        <td>
+                {{lat}}
+        </td>
+        <td>
+                {{lng}}
+        </td>
+        <td>
+                {{radius}}
+        </td>
+        <td>
+                {{date.toUTCString}}
+        </td>
+    </tr>
+</template>
