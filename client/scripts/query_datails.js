@@ -16,7 +16,9 @@ Template.query_details.helpers({
 
 Template.query_details.events({
     'click #download':function(event) {
-        var csv=Papa.unparse(Session.get("query_venues"), {
+        var id = Session.get("venues_id");
+        var venues=queryResultsDB.findOne({_id:id});
+        var csv=Papa.unparse(venues, {
             delimiter:";"
         });
         csv="sep=;\n"+csv;
