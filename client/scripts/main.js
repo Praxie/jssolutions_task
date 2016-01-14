@@ -10,7 +10,7 @@ Template.main.helpers({
     },
     showQueryDetails: function () {
         var id = Session.get("venues_id");
-        return typeof (id) !== 'undefined';
+        return !!id;
     },
 
     showHistory: function () {
@@ -29,10 +29,5 @@ Template.main.onCreated(function () {
             }
         });
     });
-    Session.set('venues_id', undefined);
-
-    Meteor.setInterval(function() {
-        var id=$("#history_table").children("tbody").children(".active").attr("id");
-        typeof(id)!=="undefined" ? Session.set("venues_id",id):Session.set("venues_id",undefined);
-    },1000);
+    Session.setDefault('venues_id', null);
 });
